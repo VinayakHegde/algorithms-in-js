@@ -17,11 +17,7 @@ const hasHomogeniousItems = (list = []) => {
   };
 };
 
-const getValueFrom = ({
-  list,
-  itemAtIndex,
-  itemType,
-}) => {
+const getValueFrom = ({ list, itemAtIndex, itemType }) => {
   if (itemType === 'mixed') {
     return null;
   }

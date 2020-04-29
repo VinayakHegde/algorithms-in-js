@@ -1,4 +1,3 @@
-
 const merge = (left, right) => {
   const result = [];
 
