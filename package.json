@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VinayakHegde/javascript-datastructures-algorithms.git"
+    "url": "git+https://github.com/VinayakHegde/algorithms-in-js.git"
   },
   "keywords": [
     "algorithm",
@@ -30,9 +30,9 @@
   "author": "Vinayak Hegde  (https://www.linkedin.com/in/vinayak.nandi/)",
   "license": "Read LICENSE file",
   "bugs": {
-    "url": "https://github.com/VinayakHegde/javascript-datastructures-algorithms/issues"
+    "url": "https://github.com/VinayakHegde/algorithms-in-js/issues"
   },
-  "homepage": "https://github.com/VinayakHegde/javascript-datastructures-algorithms#readme",
+  "homepage": "https://github.com/VinayakHegde/algorithms-in-js#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
