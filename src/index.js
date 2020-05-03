@@ -1,9 +1,5 @@
-import search from './algorithms/search';
-import sort from './algorithms/sort';
+import algorithm from './algorithms';
 
 export default {
-  algorithm: {
-    ...search,
-    ...sort,
-  },
+  ...algorithm,
 };
