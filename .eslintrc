@@ -1,4 +1,5 @@
-{"root": true,
+{
+  "root": true,
   "extends": "airbnb",
   "plugins": ["jest"],
   "env": {
