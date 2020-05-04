@@ -1,4 +1,4 @@
-import helpers from './utils';
+import helpers from '../../utils';
 
 export const BinarySearch = ({ list, value }) => {
   let itemAtIndex = -1;
