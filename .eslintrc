@@ -12,6 +12,7 @@
     "arrow-body-style": "off",
     "no-loop-func": "off",
     "no-plusplus": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "max-len": "off"
   }
 }
