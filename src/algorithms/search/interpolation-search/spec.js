@@ -2,9 +2,12 @@ import search from '.';
 
 describe('Interpolation Search', () => {
   it('should search elements in sorted array of numbers', () => {
+    expect(search()).toBe(-1);
     expect(search({ list: [], value: 1 })).toBe(-1);
     expect(search({ list: [1], value: 1 })).toBe(0);
     expect(search({ list: [1], value: 0 })).toBe(-1);
+    expect(search({ list: ['a', 1], value: 1 })).toBe(-1);
+    expect(search({ list: [1, 2], value: '1' })).toBe(-1);
     expect(search({ list: [1, 1], value: 1 })).toBe(0);
     expect(search({ list: [1, 2], value: 1 })).toBe(0);
     expect(search({ list: [1, 2], value: 2 })).toBe(1);
