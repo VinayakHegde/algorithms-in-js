@@ -1,7 +1,10 @@
 import helpers from '../../utils';
 
-export const BinarySearch = ({ list, value }) => {
+export const BinarySearch = props => {
   let itemAtIndex = -1;
+  if (!props) return itemAtIndex;
+
+  const { list, value } = props;
 
   if (list === undefined || !list.length || value === undefined) {
     return itemAtIndex;
@@ -20,11 +23,7 @@ export const BinarySearch = ({ list, value }) => {
 
   while (!isFound && low <= high) {
     itemAtIndex = Math.floor((high + low) / 2);
-    const found = helpers.getValueFrom({
-      list,
-      itemAtIndex,
-      itemType,
-    });
+    const found = helpers.getValueFrom({ list, itemAtIndex, itemType });
 
     const foundVal = isValueObj ? found[valKey] : found;
 

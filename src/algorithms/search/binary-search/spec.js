@@ -2,6 +2,7 @@ import binarySearch from '.';
 
 describe('Binary Search', () => {
   it('should search number in sorted array', () => {
+    expect(binarySearch()).toBe(-1);
     expect(binarySearch({ list: [], value: 1 })).toBe(-1);
     expect(binarySearch({ list: [1], value: 1 })).toBe(0);
     expect(binarySearch({ list: [1, 2], value: 1 })).toBe(0);
