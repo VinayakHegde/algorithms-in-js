@@ -1,5 +1,0 @@
-{
-  "hook": {
-    "pre-commit": "npm run prettify && npm run lint && npm run test"
-  }
-}
