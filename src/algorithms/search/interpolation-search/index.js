@@ -15,9 +15,9 @@ export const InterpolationSearch = (props) => {
       },
       typeof value === 'number' ? 0 : -1,
     ) !== list.length
-  )
+  ) {
     return -1;
-
+  }
   let low = start || 0;
   if (list[low] === value) return low;
 
