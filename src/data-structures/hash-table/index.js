@@ -105,7 +105,7 @@ export default class HashTable {
       if (value !== null) all.push(value);
     };
 
-    this.table.forEach(node => {
+    this.table.forEach((node) => {
       if (node) {
         push(node);
         let nextNode = node.next;

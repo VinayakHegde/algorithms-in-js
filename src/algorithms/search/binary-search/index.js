@@ -1,6 +1,6 @@
 import helpers from '../../utils';
 
-export const BinarySearch = props => {
+export const BinarySearch = (props) => {
   let itemAtIndex = -1;
   if (!props) return itemAtIndex;
 

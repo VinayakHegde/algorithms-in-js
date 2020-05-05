@@ -1,4 +1,4 @@
-export const InterpolationSearch = props => {
+export const InterpolationSearch = (props) => {
   if (!props) return -1;
   const { list, value, start, end } = props;
   if (list === undefined || !list.length || value === undefined) return -1;
@@ -7,10 +7,16 @@ export const InterpolationSearch = props => {
     if (list[0] === value) return 0;
     return -1;
   }
-  if (list.reduce((acc, cur) => {
-    if (typeof cur === 'number') acc += 1;
-    return acc;
-  }, (typeof value === 'number') ? 0 : -1) !== list.length) return -1;
+  if (
+    list.reduce(
+      (acc, cur) => {
+        if (typeof cur === 'number') acc += 1;
+        return acc;
+      },
+      typeof value === 'number' ? 0 : -1,
+    ) !== list.length
+  )
+    return -1;
 
   let low = start || 0;
   if (list[low] === value) return low;
