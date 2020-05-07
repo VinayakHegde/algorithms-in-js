@@ -1,47 +1,47 @@
 import helpers from '../../utils';
 
 export const BinarySearch = (props) => {
-  let itemAtIndex = -1;
-  if (!props) return itemAtIndex;
+  let index = -1;
+  if (!props) return index;
 
-  const { list, value } = props;
+  const { list, value, start, end } = props;
 
   if (list === undefined || !list.length || value === undefined) {
-    return itemAtIndex;
+    return index;
   }
   const { isHomogeneous, itemType } = helpers.hasHomogeniousItems(list);
   if (!isHomogeneous) {
-    return itemAtIndex;
+    return index;
   }
-  let low = 0;
-  let high = list.length - 1;
-  let isFound = false;
-
   const isValueObj = typeof value === 'object';
   const valKey = isValueObj ? Object.keys(value)[0] : null;
   const seekVal = isValueObj ? Object.values(value)[0] : value;
 
-  while (!isFound && low <= high) {
-    itemAtIndex = Math.floor((high + low) / 2);
-    const found = helpers.getValueFrom({ list, itemAtIndex, itemType });
+  const low = start || 0;
+  const high = end || list.length - 1;
 
-    const foundVal = isValueObj ? found[valKey] : found;
+  if (high < low) return index;
+
+  let found = helpers.getValueFrom({ list, atIndex: low, itemType });
+  let foundVal = isValueObj ? found[valKey] : found;
+
+  if (foundVal === seekVal) return low;
+  if (foundVal > seekVal) return index;
+
+  if (low <= high) {
+    index = Math.min(list.length, Math.floor((high + low) / 2));
+    found = helpers.getValueFrom({ list, atIndex: index, itemType });
+    foundVal = isValueObj ? found[valKey] : found;
 
     if (foundVal === seekVal) {
-      low = null;
-      high = null;
-      isFound = true;
+      return index;
     }
-    if (!isFound) {
-      if (foundVal < seekVal) {
-        low = itemAtIndex + 1;
-      } else {
-        high = itemAtIndex - 1;
-      }
+    if (foundVal > seekVal) {
+      return BinarySearch({ list, value, start: low, end: index - 1 });
     }
+    return BinarySearch({ list, value, start: index + 1, end: high });
   }
-
-  return isFound ? itemAtIndex : -1;
+  return -1;
 };
 
 export default BinarySearch;
