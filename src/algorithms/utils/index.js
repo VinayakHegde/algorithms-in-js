@@ -17,12 +17,12 @@ const hasHomogeniousItems = (list = []) => {
   };
 };
 
-const getValueFrom = ({ list, itemAtIndex, itemType }) => {
+const getValueFrom = ({ list, atIndex, itemType }) => {
   if (itemType === 'mixed') {
     return null;
   }
 
-  return list[itemAtIndex];
+  return list[atIndex];
 };
 
 export default {

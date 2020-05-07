@@ -34,9 +34,9 @@ describe('Binary Search helers.hasHomogeniousItems', () => {
 
 describe('Binary Search helers.getValueFrom', () => {
   it('getValueFrom should return value at the index', () => {
-    expect(helpers.getValueFrom({ list: [1, 2, 3, 4, 5], itemAtIndex: 0, itemType: 'number' })).toEqual(1);
-    expect(helpers.getValueFrom({ list: ['a', 'b', 'c', 'd'], itemAtIndex: 0, itemType: 'number' })).toEqual('a');
-    expect(helpers.getValueFrom({ list: [{ a: 1 }, { a: 2 }, { a: '3' }], itemAtIndex: 0, itemType: 'objject' })).toEqual({
+    expect(helpers.getValueFrom({ list: [1, 2, 3, 4, 5], atIndex: 0, itemType: 'number' })).toEqual(1);
+    expect(helpers.getValueFrom({ list: ['a', 'b', 'c', 'd'], atIndex: 0, itemType: 'number' })).toEqual('a');
+    expect(helpers.getValueFrom({ list: [{ a: 1 }, { a: 2 }, { a: '3' }], atIndex: 0, itemType: 'objject' })).toEqual({
       a: 1,
     });
   });

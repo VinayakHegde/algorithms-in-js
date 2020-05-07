@@ -24,7 +24,7 @@ export const JumpSearch = ({ list, value }) => {
   while (!isFound) {
     const found = helpers.getValueFrom({
       list,
-      itemAtIndex: Math.min(high, length) - 1,
+      atIndex: Math.min(high, length) - 1,
       itemType,
     });
     const foundVal = isValueObj ? found[valKey] : found;
@@ -45,7 +45,7 @@ export const JumpSearch = ({ list, value }) => {
   while (index < Math.min(high, length)) {
     const found = helpers.getValueFrom({
       list,
-      itemAtIndex: index,
+      atIndex: index,
       itemType,
     });
     const foundVal = isValueObj ? found[valKey] : found;
