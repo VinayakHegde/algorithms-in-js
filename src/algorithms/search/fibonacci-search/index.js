@@ -47,4 +47,10 @@ export const FibonacciSearch = props => {
   return -1;
 };
 
+FibonacciSearch.props = {
+  name: 'fibonacci-search',
+  category: 'algorithm',
+  type: 'search',
+};
+
 export default FibonacciSearch;
