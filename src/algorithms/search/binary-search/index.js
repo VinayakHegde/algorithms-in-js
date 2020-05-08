@@ -44,4 +44,10 @@ export const BinarySearch = (props) => {
   return -1;
 };
 
+BinarySearch.props = {
+  name: 'binary-search',
+  category: 'algorithm',
+  type: 'search',
+};
+
 export default BinarySearch;
