@@ -1,6 +1,6 @@
 import helpers from '.';
 
-describe('Binary Search helers.hasHomogeniousItems', () => {
+describe('helers.hasHomogeniousItems', () => {
   it('hasHomogeniousItems should say array is homogeneous', () => {
     expect(helpers.hasHomogeniousItems()).toEqual({
       isHomogeneous: true,
@@ -32,7 +32,7 @@ describe('Binary Search helers.hasHomogeniousItems', () => {
   });
 });
 
-describe('Binary Search helers.getValueFrom', () => {
+describe('helers.getValueFrom', () => {
   it('getValueFrom should return value at the index', () => {
     expect(helpers.getValueFrom({ list: [1, 2, 3, 4, 5], atIndex: 0, itemType: 'number' })).toEqual(1);
     expect(helpers.getValueFrom({ list: ['a', 'b', 'c', 'd'], atIndex: 0, itemType: 'number' })).toEqual('a');
@@ -42,5 +42,33 @@ describe('Binary Search helers.getValueFrom', () => {
   });
   it('getValueFrom should return null at the index', () => {
     expect(helpers.getValueFrom({ list: [1, { a: 2 }, '3', 4, 5], itemType: 'mixed' })).toEqual(null);
+  });
+});
+
+describe('helpers.hasAllNumberType', () => {
+  it('should be truthy', () => {
+    const listNum = [1, 2, 3];
+    const listStr = ['a', 'b', 'c'];
+    const listMix = [1, '2', 3, { x: 'abc' }];
+    expect(helpers.hasAllNumberType(listNum)).toBeTruthy();
+    expect(helpers.hasAllNumberType(listMix)).toBeFalsy();
+    expect(helpers.hasAllNumberType(listStr)).toBeFalsy();
+    expect(helpers.hasAllNumberType()).toBeFalsy();
+    expect(helpers.hasAllNumberType([])).toBeFalsy();
+  });
+});
+
+describe('helpers.hasUniqurNumber', () => {
+  it('should be truthy', () => {
+    const listNum = [1, 2, 3];
+    const listNumRepeat = [1, 2, 3, 1, 2, 4, 5];
+    const listStr = ['a', 'b', 'c'];
+    const listMix = [1, '2', 3, { x: 'abc' }];
+    expect(helpers.hasUniqueNumbers(listNum)).toBeTruthy();
+    expect(helpers.hasUniqueNumbers(listNumRepeat)).toBeFalsy();
+    expect(helpers.hasUniqueNumbers(listMix)).toBeFalsy();
+    expect(helpers.hasUniqueNumbers(listStr)).toBeFalsy();
+    expect(helpers.hasUniqueNumbers()).toBeFalsy();
+    expect(helpers.hasUniqueNumbers([])).toBeFalsy();
   });
 });
