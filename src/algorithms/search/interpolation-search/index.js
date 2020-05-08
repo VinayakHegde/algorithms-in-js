@@ -35,4 +35,10 @@ export const InterpolationSearch = (props) => {
   return -1;
 };
 
+InterpolationSearch.props = {
+  name: 'interpolation-search',
+  category: 'algorithm',
+  type: 'search',
+};
+
 export default InterpolationSearch;
