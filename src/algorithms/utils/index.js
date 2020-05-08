@@ -25,7 +25,22 @@ const getValueFrom = ({ list, atIndex, itemType }) => {
   return list[atIndex];
 };
 
+const hasAllNumberType = (list = []) => {
+  if (!list || !list.length) return false;
+  return list.reduce((acc, curr) => (acc ? (typeof curr === 'number') : acc), true);
+};
+
+const hasUniqueNumbers = (list = []) => {
+  if (hasAllNumberType(list)) {
+    return list.length === [...new Set(list)].length;
+  }
+
+  return false;
+};
+
 export default {
   hasHomogeniousItems,
   getValueFrom,
+  hasAllNumberType,
+  hasUniqueNumbers,
 };
