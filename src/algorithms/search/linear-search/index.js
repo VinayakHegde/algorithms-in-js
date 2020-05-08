@@ -23,4 +23,10 @@ const LinearSearch = props => {
   return valueAtIndeces;
 };
 
+LinearSearch.props = {
+  name: 'linear-search',
+  category: 'algorithm',
+  type: 'search',
+};
+
 export default LinearSearch;
