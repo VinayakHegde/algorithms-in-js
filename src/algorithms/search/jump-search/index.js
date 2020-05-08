@@ -1,6 +1,9 @@
 import helpers from '../../utils';
 
-export const JumpSearch = ({ list, value }) => {
+export const JumpSearch = (props) => {
+  if (!props) return -1;
+  const { list, value } = props;
+
   if (list === undefined || !list.length || value === undefined) {
     return -1;
   }
@@ -58,6 +61,12 @@ export const JumpSearch = ({ list, value }) => {
   }
 
   return -1;
+};
+
+JumpSearch.props = {
+  name: 'jump-search',
+  category: 'algorithm',
+  type: 'search',
 };
 
 export default JumpSearch;
