@@ -41,5 +41,9 @@ const ExponentialSearch = props => {
   const end = Math.min(list.length - 1, index);
   return BinarySearch({ list, value, start, end });
 };
-
+ExponentialSearch.props = {
+  name: 'exponential-search',
+  category: 'algorithm',
+  type: 'search',
+};
 export default ExponentialSearch;
