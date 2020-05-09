@@ -1,7 +1,12 @@
 import CommonSearch from './common';
 import CommonSearchObject from './object';
 import CommonSearchDefault from './default';
-import { FirstFoundValueIndex, UnsortedListNotFound } from './special';
+import {
+  FirstFoundValueIndex,
+  LastFoundValueIndex,
+  UnsortedListNotFound,
+  UnsortedListFound,
+} from './special';
 
 export default ctx => {
   ctx.common = ctx.direct(CommonSearch);
@@ -10,5 +15,7 @@ export default ctx => {
   ctx.special = {
     firstFoundValueIndex: ctx.direct(FirstFoundValueIndex),
     unsortedListNotFound: ctx.direct(UnsortedListNotFound),
+    unsortedListFound: ctx.direct(UnsortedListFound),
+    lastFoundValueIndex: ctx.direct(LastFoundValueIndex),
   };
 };
