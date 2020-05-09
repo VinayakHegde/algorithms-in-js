@@ -1,6 +1,7 @@
 import helpers from '../../utils';
+import SearchBase from '../search-base';
 
-export const FibonacciSearch = props => {
+export const fibonacciSearch = props => {
   let index = -1;
 
   if (!props) return index;
@@ -47,10 +48,13 @@ export const FibonacciSearch = props => {
   return -1;
 };
 
-FibonacciSearch.props = {
-  name: 'fibonacci-search',
-  category: 'algorithm',
-  type: 'search',
-};
-
-export default FibonacciSearch;
+export default class Search extends SearchBase {
+  get props() {
+    return {
+      act: fibonacciSearch,
+      name: 'fibonacci-search',
+      category: 'algorithm',
+      type: 'search',
+    };
+  }
+}
