@@ -1,5 +1,4 @@
-import CommonSearch from './common/search';
-import CommonSearchObject from './common/search/object';
+import search from './search';
 
 const ALG = {
   SEARCH: 'search',
@@ -7,10 +6,12 @@ const ALG = {
 };
 
 class TestSuite {
-  constructor(testConstructure) {
-    this.testConstructure = testConstructure;
-    const { category, type } = testConstructure.props;
+  constructor(Actor) {
+    const actor = new Actor();
+    const { category, type } = actor.props;
 
+    this.actor = Actor;
+    this.act = actor.act;
     if (category.toLowerCase() === 'algorithm') {
       this.algorithm(type.toLowerCase());
     }
@@ -19,16 +20,15 @@ class TestSuite {
   algorithm(type) {
     switch (type) {
       case ALG.SEARCH:
-        this.common = this.runner(CommonSearch);
-        this.object = this.runner(CommonSearchObject);
+        search(this);
         break;
       default: break;
     }
   }
 
-  runner(specific) {
+  direct(scene, needActor) {
     return () => {
-      specific(this.testConstructure);
+      scene(needActor ? this.actor : this.act);
     };
   }
 }
