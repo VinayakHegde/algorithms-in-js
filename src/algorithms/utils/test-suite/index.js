@@ -22,7 +22,8 @@ class TestSuite {
       case ALG.SEARCH:
         search(this);
         break;
-      default: break;
+      default:
+        break;
     }
   }
 

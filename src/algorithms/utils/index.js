@@ -27,7 +27,7 @@ const getValueFrom = ({ list, atIndex, itemType }) => {
 
 const hasAllNumberType = (list = []) => {
   if (!list || !list.length) return false;
-  return list.reduce((acc, curr) => (acc ? (typeof curr === 'number') : acc), true);
+  return list.reduce((acc, curr) => (acc ? typeof curr === 'number' : acc), true);
 };
 
 const hasUniqueNumbers = (list = []) => {

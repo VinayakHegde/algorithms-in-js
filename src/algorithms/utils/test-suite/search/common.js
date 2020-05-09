@@ -1,4 +1,4 @@
-export default search => {
+export default (search) => {
   it('should search elements in sorted array of numbers', () => {
     expect(search({ list: [1], value: 1 })).toBe(0);
     expect(search({ list: [1, 2], value: 2 })).toBe(1);

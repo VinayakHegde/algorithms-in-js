@@ -1,7 +1,7 @@
 import helpers from '../../utils';
 import SearchBase from '../search-base';
 
-export const fibonacciSearch = props => {
+export const fibonacciSearch = (props) => {
   let index = -1;
 
   if (!props) return index;
@@ -38,7 +38,7 @@ export const fibonacciSearch = props => {
       curr -= prev;
       prev = next - curr;
     } else if (list[loc] === value) {
-      return (loc === 0 && list.length === 2 && list[1] === value) ? 1 : loc;
+      return loc === 0 && list.length === 2 && list[1] === value ? 1 : loc;
     } else return -1;
   }
   if (curr === 1 && list[index + 1] === value) {

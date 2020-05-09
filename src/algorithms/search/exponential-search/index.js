@@ -2,7 +2,7 @@ import { binarySearch } from '../binary-search';
 import helpers from '../../utils';
 import SearchBase from '../search-base';
 
-const exponentialSearch = props => {
+const exponentialSearch = (props) => {
   let index = -1;
   if (!props) return index;
 

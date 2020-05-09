@@ -22,12 +22,7 @@ describe('linearSearch', () => {
   });
 
   it('should search through objects as well', () => {
-    const list = [
-      { key: 5 },
-      { key: 6 },
-      { key: 7 },
-      { key: 6 },
-    ];
+    const list = [{ key: 5 }, { key: 6 }, { key: 7 }, { key: 6 }];
 
     expect(search({ list, value: 10 })).toEqual([]);
     expect(search({ list, value: { key: 10 } })).toEqual([]);

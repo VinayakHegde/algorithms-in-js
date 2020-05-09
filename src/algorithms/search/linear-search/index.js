@@ -1,4 +1,4 @@
-const LinearSearch = props => {
+const LinearSearch = (props) => {
   const valueAtIndeces = [];
   if (!props) return valueAtIndeces;
   const { list, value } = props;

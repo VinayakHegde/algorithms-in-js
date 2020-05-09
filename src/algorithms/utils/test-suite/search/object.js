@@ -1,4 +1,4 @@
-export default search => {
+export default (search) => {
   it('should search object in array', () => {
     const list = [
       { number: 1, string: 'string 1', object: { number: 1 } },
