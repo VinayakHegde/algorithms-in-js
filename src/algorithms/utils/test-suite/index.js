@@ -31,6 +31,14 @@ class TestSuite {
       scene(needActor ? this.actor : this.act);
     };
   }
+
+  runner(actor) {
+    const Search = this.actor;
+    const srch = new Search();
+    it('should test the act function', () => {
+      expect(srch.act).toEqual(actor);
+    });
+  }
 }
 
 export default TestSuite;
