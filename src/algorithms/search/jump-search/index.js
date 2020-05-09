@@ -1,6 +1,7 @@
 import helpers from '../../utils';
+import SearchBase from '../search-base';
 
-export const JumpSearch = (props) => {
+export const jumpSearch = (props) => {
   if (!props) return -1;
   const { list, value } = props;
 
@@ -63,10 +64,13 @@ export const JumpSearch = (props) => {
   return -1;
 };
 
-JumpSearch.props = {
-  name: 'jump-search',
-  category: 'algorithm',
-  type: 'search',
-};
-
-export default JumpSearch;
+export default class Search extends SearchBase {
+  get props() {
+    return {
+      act: jumpSearch,
+      name: 'jump-search',
+      category: 'algorithm',
+      type: 'search',
+    };
+  }
+}
