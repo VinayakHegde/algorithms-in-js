@@ -1,6 +1,7 @@
 import helpers from '../../utils';
+import SearchBase from '../search-base';
 
-export const BinarySearch = (props) => {
+export const binarySearch = (props) => {
   let index = -1;
   if (!props) return index;
 
@@ -37,17 +38,20 @@ export const BinarySearch = (props) => {
       return index;
     }
     if (foundVal > seekVal) {
-      return BinarySearch({ list, value, start: low, end: index - 1 });
+      return binarySearch({ list, value, start: low, end: index - 1 });
     }
-    return BinarySearch({ list, value, start: index + 1, end: high });
+    return binarySearch({ list, value, start: index + 1, end: high });
   }
   return -1;
 };
 
-BinarySearch.props = {
-  name: 'binary-search',
-  category: 'algorithm',
-  type: 'search',
-};
-
-export default BinarySearch;
+export default class Search extends SearchBase {
+  get props() {
+    return {
+      act: binarySearch,
+      name: 'binary-search',
+      category: 'algorithm',
+      type: 'search',
+    };
+  }
+}
