@@ -1,7 +1,8 @@
-import { BinarySearch } from '../binary-search';
+import { binarySearch } from '../binary-search';
 import helpers from '../../utils';
+import SearchBase from '../search-base';
 
-const ExponentialSearch = props => {
+const exponentialSearch = props => {
   let index = -1;
   if (!props) return index;
 
@@ -39,11 +40,16 @@ const ExponentialSearch = props => {
   }
   const start = Math.floor(index / 2);
   const end = Math.min(list.length - 1, index);
-  return BinarySearch({ list, value, start, end });
+  return binarySearch({ list, value, start, end });
 };
-ExponentialSearch.props = {
-  name: 'exponential-search',
-  category: 'algorithm',
-  type: 'search',
-};
-export default ExponentialSearch;
+
+export default class Search extends SearchBase {
+  get props() {
+    return {
+      act: exponentialSearch,
+      name: 'exponential-search',
+      category: 'algorithm',
+      type: 'search',
+    };
+  }
+}
