@@ -1,4 +1,6 @@
-export const InterpolationSearch = (props) => {
+import SearchBase from '../search-base';
+
+export const interpolationSearch = (props) => {
   if (!props) return -1;
   const { list, value, start, end } = props;
   if (list === undefined || !list.length || value === undefined) return -1;
@@ -30,15 +32,18 @@ export const InterpolationSearch = (props) => {
     if (list[position] === value) return position;
     if (list[position] < value) low = position + 1;
     else high = position - 1;
-    return InterpolationSearch({ list, value, start: low, end: high });
+    return interpolationSearch({ list, value, start: low, end: high });
   }
   return -1;
 };
 
-InterpolationSearch.props = {
-  name: 'interpolation-search',
-  category: 'algorithm',
-  type: 'search',
-};
-
-export default InterpolationSearch;
+export default class Search extends SearchBase {
+  get props() {
+    return {
+      act: interpolationSearch,
+      name: 'interpolation-search',
+      category: 'algorithm',
+      type: 'search',
+    };
+  }
+}
