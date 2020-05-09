@@ -14,18 +14,26 @@
     "url": "git+https://github.com/VinayakHegde/algorithms-in-js.git"
   },
   "keywords": [
-    "algorithm",
-    "algorithms",
     "computer-science",
     "cs",
     "data-structures",
+    "hash-table",
     "graph",
-    "interview",
-    "interview-preparation",
+    "tree",
+    "algorithm",
+    "algorithms",
     "javascript",
     "javascript-algorithms",
     "sorting-algorithms",
-    "tree"
+    "searching-algorithms",
+    "binary-search",
+    "exponential-search",
+    "fibonacci-search",
+    "interpolation-search",
+    "jump-search",
+    "linear-search",
+    "interview",
+    "interview-preparation"
   ],
   "author": "Vinayak Hegde  (https://www.linkedin.com/in/vinayak.nandi/)",
   "license": "Read LICENSE file",
@@ -43,8 +51,8 @@
     "eslint-plugin-jest": "^22.7.1",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.14.2",
-    "prettier": "^1.19.1",
-    "husky": "^2.5.0",
-    "jest": "^24.8.0"
+    "husky": "^2.7.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.19.1"
   }
 }
