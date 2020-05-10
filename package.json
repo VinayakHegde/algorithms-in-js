@@ -4,6 +4,7 @@
   "description": "Implemention of algorithms in JavaScript",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode=production",
     "start": "node ./src",
     "test": "jest",
     "lint": "eslint --fix ./src/*",
@@ -43,8 +44,13 @@
   "homepage": "https://github.com/VinayakHegde/algorithms-in-js#readme",
   "devDependencies": {
     "@babel/cli": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
     "@types/jest": "^24.0.15",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.18.0",
@@ -53,6 +59,9 @@
     "eslint-plugin-react": "^7.14.2",
     "husky": "^2.7.0",
     "jest": "^24.8.0",
-    "prettier": "^1.19.1"
+    "path": "^0.12.7",
+    "prettier": "^1.19.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
