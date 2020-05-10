@@ -4,7 +4,7 @@ module.exports = {
   context: __dirname,
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'package/build'),
+    path: path.resolve(__dirname, 'build/package'),
     filename: 'algorithms.js',
   },
   module: {
