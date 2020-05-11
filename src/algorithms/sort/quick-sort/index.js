@@ -1,15 +1,35 @@
-export const QuickSort = (arr) => {
-  if (arr.length < 2) return arr;
-  const pivot = arr.splice(0, 1);
+import SortBase from '../sort-base';
+import helpers from '../../utils';
+
+export const quickSort = (props) => {
+  if (!props) return [];
+  const { list } = props;
+
+  if (!list || !list.length) return [];
+
+  if (list.length <= 2) {
+    const tempList = [helpers.min(list[0], list[1]), helpers.max(list[0], list[1])];
+    return tempList.length === list.length ? tempList : list;
+  }
+
+  const pivot = list.shift();
   const lesser = [];
   const greater = [];
 
-  arr.forEach((item) => {
+  list.forEach((item) => {
     if (item <= pivot) lesser.push(item);
     else greater.push(item);
   });
-
-  return QuickSort(lesser).concat(pivot, QuickSort(greater));
+  return [...quickSort({ list: lesser }), pivot, ...quickSort({ list: greater })];
 };
 
-export default QuickSort;
+export default class Sort extends SortBase {
+  get props() {
+    return {
+      act: quickSort,
+      name: 'quick-sort',
+      category: 'algorithm',
+      type: 'sort',
+    };
+  }
+}
