@@ -1,3 +1,5 @@
+import SortBase from '../sort-base';
+
 const merge = (left, right) => {
   const result = [];
 
@@ -16,14 +18,26 @@ const merge = (left, right) => {
   return result;
 };
 
-export const MergeSort = (arr) => {
-  if (arr.length < 2) return arr;
+export const mergeSort = (props) => {
+  if (!props) return [];
+  const { list } = props;
+  if (!list || !list.length) return [];
+  if (list.length < 2) return list;
 
-  const middle = parseInt(arr.length / 2, 10);
-  const left = arr.slice(0, middle);
-  const right = arr.slice(middle, arr.length);
+  const middle = parseInt(list.length / 2, 10);
+  const left = list.slice(0, middle);
+  const right = list.slice(middle, list.length);
 
-  return merge(MergeSort(left), MergeSort(right));
+  return merge(mergeSort({ list: left }), mergeSort({ list: right }));
 };
 
-export default MergeSort;
+export default class Sort extends SortBase {
+  get props() {
+    return {
+      act: mergeSort,
+      name: 'merge-sort',
+      category: 'algorithm',
+      type: 'sort',
+    };
+  }
+}
