@@ -72,3 +72,33 @@ describe('helpers.hasUniqurNumber', () => {
     expect(helpers.hasUniqueNumbers([])).toBeFalsy();
   });
 });
+
+describe('helpers.min', () => {
+  it('should return 1 when 1, 2 passed', () => {
+    expect(helpers.min(1, 2)).toBe(1);
+  });
+  it('should return a when a, z passed', () => {
+    expect(helpers.min('a', 'z')).toBe('a');
+  });
+  it('should return 2 when 2 passed', () => {
+    expect(helpers.min(2)).toBe(2);
+  });
+  it('should return null when nothing passed', () => {
+    expect(helpers.min()).toBeNull();
+  });
+});
+
+describe('helpers.max', () => {
+  it('should return 2 when 1, 2 passed', () => {
+    expect(helpers.max(1, 2)).toBe(2);
+  });
+  it('should return z when a, z passed', () => {
+    expect(helpers.max('a', 'z')).toBe('z');
+  });
+  it('should return 2 when 2 passed', () => {
+    expect(helpers.max(2)).toBe(2);
+  });
+  it('should return null when nothing passed', () => {
+    expect(helpers.max()).toBeNull();
+  });
+});

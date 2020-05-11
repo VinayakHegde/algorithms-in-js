@@ -38,9 +38,30 @@ const hasUniqueNumbers = (list = []) => {
   return false;
 };
 
+const min = (a, b) => {
+  if (a === undefined) {
+    return null;
+  }
+  if (b) {
+    return a > b ? b : a;
+  }
+  return a;
+};
+const max = (a, b) => {
+  if (a === undefined) {
+    return null;
+  }
+  if (b) {
+    return a > b ? a : b;
+  }
+  return a;
+};
+
 export default {
   hasHomogeniousItems,
   getValueFrom,
   hasAllNumberType,
   hasUniqueNumbers,
+  min,
+  max,
 };
