@@ -1,4 +1,5 @@
 import search from './search';
+import sort from './sort';
 
 const ALG = {
   SEARCH: 'search',
@@ -22,6 +23,9 @@ class TestSuite {
       case ALG.SEARCH:
         search(this);
         break;
+      case ALG.SORT:
+        sort(this);
+        break;
       default:
         break;
     }
@@ -34,10 +38,10 @@ class TestSuite {
   }
 
   runner(actor) {
-    const Search = this.actor;
-    const srch = new Search();
+    const Constructor = this.actor;
+    const runner = new Constructor();
     it('should test the act function', () => {
-      expect(srch.act).toEqual(actor);
+      expect(runner.act).toEqual(actor);
     });
   }
 }
