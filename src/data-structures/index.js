@@ -1,7 +1,9 @@
 import HashTable from './hash-table';
+import Stack from './stack';
 
 export default {
   dataStructure: {
-    hashTable: HashTable,
+    HashTable,
+    Stack,
   },
 };
