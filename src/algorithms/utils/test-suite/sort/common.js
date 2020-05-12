@@ -10,16 +10,8 @@ export default sort => {
     expect(sort({ list: [1] })).toEqual([1]);
     expect(sort({ list: [1, 2] })).toEqual([1, 2]);
     expect(sort({ list: [2, 1] })).toEqual([1, 2]);
-    expect(sort({ list: [3, 4, 2, 1, 0, 0, 4, 3, 4, 2] })).toEqual([0, 0, 1, 2, 2, 3, 3, 4, 4, 4]);
     expect(sort({ list: sortedArrDsc })).toEqual(sortedArrAsc);
     expect(sort({ list: unSortedArr })).toEqual(sortedArrAsc);
     expect(sort({ list: negativeUnSortedArr })).toEqual(negativeSortedArr);
-  });
-  it('should sort string array', () => {
-    expect(sort({ list: [''] })).toEqual(['']);
-    expect(sort({ list: ['a'] })).toEqual(['a']);
-    expect(sort({ list: ['aa', 'a'] })).toEqual(['a', 'aa']);
-    expect(sort({ list: ['aa', 'q', 'bbbb', 'ccc'] })).toEqual(['aa', 'bbbb', 'ccc', 'q']);
-    expect(sort({ list: ['aa', 'aa'] })).toEqual(['aa', 'aa']);
   });
 };
