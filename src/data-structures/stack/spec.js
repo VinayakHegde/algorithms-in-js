@@ -16,7 +16,7 @@ describe('Empty Stack', () => {
     expect(stack.popOrderToString()).toBe('');
   });
   it('should return empty list when pushOrder is performed on empty stack', () => {
-    expect(stack.pushOrder(true)).toEqual([]);
+    expect(stack.pushOrder()).toEqual([]);
   });
 });
 

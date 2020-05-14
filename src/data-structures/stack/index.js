@@ -10,7 +10,19 @@ class Stack {
     return this;
   }
 
+  pop() {
+    if (this.isEmpty()) {
+      return null;
+    }
+
+    this.length -= 1;
+    return this.container.pop();
+  }
+
   peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
     return this.container[this.length - 1];
   }
 
@@ -24,13 +36,15 @@ class Stack {
     return this;
   }
 
-  pop() {
+  pushOrder() {
     if (this.isEmpty()) {
-      return null;
+      return [];
     }
+    return this.container;
+  }
 
-    this.length -= 1;
-    return this.container.pop();
+  pushOrderToString() {
+    return this.pushOrder().join(', ');
   }
 
   popOrder() {
@@ -46,17 +60,6 @@ class Stack {
 
   popOrderToString() {
     return this.popOrder().join(', ');
-  }
-
-  pushOrder() {
-    if (this.isEmpty()) {
-      return [];
-    }
-    return this.container;
-  }
-
-  pushOrderToString() {
-    return this.pushOrder().join(', ');
   }
 }
 
