@@ -1,4 +1,4 @@
-export default sort => {
+export default (sort) => {
   it('should sort string array', () => {
     expect(sort({ list: [''] })).toEqual(['']);
     expect(sort({ list: ['a'] })).toEqual(['a']);

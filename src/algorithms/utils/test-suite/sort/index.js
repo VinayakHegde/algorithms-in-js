@@ -1,11 +1,6 @@
 import CommonSort from './common';
 import StringSort from './string';
-import {
-  ReadySortedList,
-  SameItemList,
-  DuplicateItemsListUnsort,
-  DuplicateItemsListSort,
-} from './special';
+import { ReadySortedList, SameItemList, DuplicateItemsListUnsort, DuplicateItemsListSort } from './special';
 
 export default (ctx) => {
   ctx.common = ctx.direct(CommonSort);
